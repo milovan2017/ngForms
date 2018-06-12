@@ -11,7 +11,9 @@ export class Form01Component implements OnInit {
       lastname: ""
    }
   constructor() { }
-
+  onSubmit (){
+     alert(`Firstname: ${this.model.firstname} Lastname: ${this.model.lastname}`)
+ }
   ngOnInit() {
   }
 
