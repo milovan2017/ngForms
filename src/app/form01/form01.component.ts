@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form01.component.css']
 })
 export class Form01Component implements OnInit {
-
+   model= {
+      firstname:"",
+      lastname: ""
+   }
   constructor() { }
 
   ngOnInit() {

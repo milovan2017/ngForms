@@ -1,7 +1,19 @@
 <div>
-   <form (ngSubmit)="onSubmit()" #form01>
+   <form (ngSubmit)="onSubmit()" #form01 [ngFormOptions]="{ updateOn: 'blur' }">
    <div class="form-group">
-      <label for="fistName">What's your first name?</label>
+      <label for="fistname">What's your first name?</label>
+      <input type="text" class="form-control" id="firstname" required [(ngModel)]="model.firstname" name="firstname" #firstname="ngModel" [ngModelOptions]="{ updateOn: 'change'}">
+      <div [hidden]="firstname.valid || firstname.pristine" class="alert alert-danger">First name is required</div>
    </div>
+   <div class="form-group">
+      <label for="lastname">What's your last name?</label>
+      <input type="text" class="form-control" id="lastname" required [(ngModel)]="model.lastname" name="lastname" #lastname="ngModel" [ngModelOptions]="{ updateOn: 'change'}">
+      <div [hidden]="lastname.valid || lastname.pristine" class="alert alert-danger">Last name is required</div>
+   </div>
+   <button class="btn btn-success" type=submit>Submit</button>
 </form>
+<br>
+<div>
+   <h3 *ngIf="model.firstname && model.lastname">Hello {{model.firstname}} {{ model.lastname }}</h3>
+</div>
 </div>
