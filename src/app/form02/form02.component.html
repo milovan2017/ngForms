@@ -1,4 +1,4 @@
-<form [formGroup]="nameForm" novalidate>
+<form [formGroup]="nameForm" novalidate (ngSubmit)="onSubmit()">
    <div class="form-group">
       <label>What's your first name?</label>
       <input class="form-control" formControlName="firstname">

@@ -24,4 +24,8 @@ export class Form02Component implements OnInit {
      });
   }
 
+  onSubmit (){
+     alert(`Firstname: ${this.nameForm.value.firstname} Lastname: ${this.nameForm.value.lastname}`)
+ }
+
 }
